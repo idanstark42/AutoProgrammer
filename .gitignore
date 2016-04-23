@@ -1,5 +1,2 @@
 #git ignore file
-
-
-#ignore all files in .idea
-.idea/*
+#currently empty

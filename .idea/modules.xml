@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AutoProgrammer.iml" filepath="$PROJECT_DIR$/AutoProgrammer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Procedures/Procedures.iml" filepath="$PROJECT_DIR$/Procedures/Procedures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UML/UML.iml" filepath="$PROJECT_DIR$/UML/UML.iml" />
+    </modules>
+  </component>
+</project>
