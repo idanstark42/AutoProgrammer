@@ -5,9 +5,9 @@ import java.util.ArrayList;
 /**
  * Created by Idan Stark on 23/04/16.
  */
-public class InstanceState<T> {
+public class InstanceState {
 
-    public T instance;
+    public Instance instance;
 
     public ArrayList<InstanceMark> state;
 
