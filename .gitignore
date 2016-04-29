@@ -3,3 +3,4 @@
 
 #ignore all files in .idea
 .idea/*
+*/.idea/*
