@@ -11,4 +11,12 @@ public class InstanceState {
 
     public ArrayList<InstanceMark> state;
 
+    public boolean is(String markName) {
+        for(InstanceMark mark : state){
+            if(mark.name.equals(markName)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

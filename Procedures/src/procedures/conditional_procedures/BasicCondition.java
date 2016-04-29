@@ -15,7 +15,7 @@ public class BasicCondition implements Procedure{
 
     @Override
     public Situation act(Situation initialSituation) {
-        if(condition.get(initialSituation)){
+        if(condition.get(initialSituation).is("true")){
             return onTrue.act(initialSituation);
         }
         return onFalse.act(initialSituation);

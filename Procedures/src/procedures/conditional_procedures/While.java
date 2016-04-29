@@ -15,7 +15,7 @@ public class While implements Procedure{
     @Override
     public Situation act(Situation initialSituation) {
         Situation sit = initialSituation;
-        while(condition.get(sit)){
+        while(condition.get(sit).is("true")){
             sit = procedure.act(sit);
         }
         return sit;

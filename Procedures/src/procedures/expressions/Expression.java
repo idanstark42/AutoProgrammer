@@ -1,6 +1,7 @@
 package procedures.expressions;
 
 import procedures.Procedure;
+import situations.InstanceState;
 import situations.Situation;
 
 /**
@@ -8,10 +9,10 @@ import situations.Situation;
  */
 public abstract class Expression<T> implements Procedure {
 
-    public T get(Situation initialSituation){
+    public InstanceState get(Situation initialSituation){
         Situation sit = act(initialSituation);
 
-        return (T) sit.objects.get(0).instance;
+        return sit.objects.get(0);
     }
 
 }

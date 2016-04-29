@@ -11,7 +11,6 @@ public class Situation {
 
     public ArrayList<InstanceState> objects;
 
-
     public Situation subSituation(String... names){
         Situation result = new Situation();
         for(String name : names){
@@ -28,5 +27,4 @@ public class Situation {
         }
         throw new ObjectNotFoundException();
     }
-
 }
