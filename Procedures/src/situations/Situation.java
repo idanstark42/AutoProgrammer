@@ -27,4 +27,15 @@ public class Situation {
         }
         throw new ObjectNotFoundException();
     }
+
+    public void join(Situation situation) {
+        for(InstanceState object : situation.objects){
+            try {
+                objects.remove(getObject(object.instance.name));
+            }catch(ObjectNotFoundException e){
+
+            }
+            objects.add(object);
+        }
+    }
 }

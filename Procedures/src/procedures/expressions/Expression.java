@@ -7,12 +7,12 @@ import situations.Situation;
 /**
  * Created by Idan Stark on 23/04/16.
  */
-public abstract class Expression<T> implements Procedure {
+public abstract class Expression implements Procedure {
 
     public InstanceState get(Situation initialSituation){
         Situation sit = act(initialSituation);
 
-        return sit.objects.get(0);
+        return sit.getObject("result");
     }
 
 }

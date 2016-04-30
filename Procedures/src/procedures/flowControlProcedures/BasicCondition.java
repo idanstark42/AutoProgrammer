@@ -1,4 +1,4 @@
-package procedures.conditional_procedures;
+package procedures.flowControlProcedures;
 
 import procedures.Procedure;
 import procedures.expressions.Expression;
@@ -11,7 +11,7 @@ public class BasicCondition implements Procedure{
 
     public Procedure onTrue;
     public Procedure onFalse;
-    public Expression<Boolean> condition;
+    public Expression condition;
 
     @Override
     public Situation act(Situation initialSituation) {

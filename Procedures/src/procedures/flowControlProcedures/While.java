@@ -1,4 +1,4 @@
-package procedures.conditional_procedures;
+package procedures.flowControlProcedures;
 
 import procedures.Procedure;
 import procedures.expressions.Expression;
@@ -10,7 +10,7 @@ import situations.Situation;
 public class While implements Procedure{
 
     public Procedure procedure;
-    public Expression<Boolean> condition;
+    public Expression condition;
 
     @Override
     public Situation act(Situation initialSituation) {
