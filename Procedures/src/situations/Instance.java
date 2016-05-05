@@ -9,4 +9,10 @@ public class Instance {
 
     public String name;
 
+    public Instance(){}
+
+    public Instance(Instance instance) {
+        this.name = instance.name;
+        this.type = instance.type;
+    }
 }

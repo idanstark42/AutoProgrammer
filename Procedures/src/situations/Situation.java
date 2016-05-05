@@ -11,6 +11,17 @@ public class Situation {
 
     public ArrayList<InstanceState> objects;
 
+    public Situation(){
+        objects = new ArrayList<InstanceState>();
+    }
+
+    public Situation(Situation otherSituation) {
+        this();
+        for(InstanceState object : otherSituation.objects){
+            objects.add(new InstanceState(object));
+        }
+    }
+
     public Situation subSituation(String... names){
         Situation result = new Situation();
         for(String name : names){
