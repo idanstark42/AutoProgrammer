@@ -7,7 +7,7 @@ import situations.Situation;
 /**
  * Created by Idan Stark on 05/05/16.
  */
-public class Create<T> implements Procedure{
+public class Create implements Procedure{
 
     private java.lang.reflect.Type type;
     private String name;
