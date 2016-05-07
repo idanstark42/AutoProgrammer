@@ -14,7 +14,6 @@ public class Update implements Procedure{
     private String oldMark;
     private String newMark;
 
-
     @Override
     public Situation act(Situation initialSituation) {
         InstanceState object = initialSituation.getObject(objectName);
