@@ -15,4 +15,9 @@ public class Instance {
         this.name = instance.name;
         this.type = instance.type;
     }
+
+    public boolean equals(Instance instance){
+        return this.name == instance.name && this.type == instance.type;
+    }
+
 }

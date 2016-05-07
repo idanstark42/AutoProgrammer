@@ -49,4 +49,13 @@ public class Situation {
             objects.add(object);
         }
     }
+
+    public boolean containsObjectByName(String name) {
+        try{
+            getObject(name);
+        }catch(ObjectNotFoundException e){
+            return false;
+        }
+        return true;
+    }
 }
