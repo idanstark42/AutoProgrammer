@@ -10,11 +10,11 @@ import situations.SituationMath;
 /**
  * Created by Idan Stark on 30/04/16.
  */
-public class DjesikaChoosingAlgorithm implements ChoosingAlgorithm{
+public class PriorotizedChoosingAlgorithm implements ChoosingAlgorithm{
 
     public Iterable<Procedure> possibleUpdates;
 
-    public DjesikaChoosingAlgorithm(Iterable<Procedure> possibleUpdates){
+    public PriorotizedChoosingAlgorithm(Iterable<Procedure> possibleUpdates){
         this.possibleUpdates = possibleUpdates;
     }
 
