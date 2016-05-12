@@ -1,6 +1,7 @@
 package procedures.singleObjectCRUD;
 
 import procedures.Procedure;
+import situations.Instance;
 import situations.InstanceMark;
 import situations.InstanceState;
 import situations.Situation;
@@ -28,5 +29,15 @@ public class Update implements Procedure{
         InstanceState object = initialSituation.getObject(objectName);
         object.state = newState;
         return initialSituation;
+    }
+
+    public Situation getNesseceryInitialSituation() {
+        Situation result = new Situation();
+
+        InstanceState object = new InstanceState();
+        object.instance.name = objectName;
+
+        result.objects.add(object);
+        return result;
     }
 }

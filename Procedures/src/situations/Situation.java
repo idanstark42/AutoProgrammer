@@ -58,4 +58,17 @@ public class Situation {
         }
         return true;
     }
+
+    public boolean equals(Situation situaion){
+        for(InstanceState myObject : this.objects){
+            if(!situaion.containsObjectByName(myObject.instance.name)){
+                return false;
+            }
+            InstanceState hisObject = situaion.getObject(myObject.instance.name);
+            if(!hisObject.equals(myObject)){
+                return false;
+            }
+        }
+        return true;
+    }
 }

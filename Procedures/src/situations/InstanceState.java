@@ -54,4 +54,13 @@ public class InstanceState {
         }
         throw new ObjectNotFoundException();
     }
+
+    public boolean equals(InstanceState object){
+        for(InstanceMark mark : state){
+            if(!object.is(mark.name)){
+                return false;
+            }
+        }
+        return true;
+    }
 }
