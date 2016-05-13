@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class Situation {
 
-    public ArrayList<InstanceState> objects;
+    ArrayList<InstanceState> objects;
     public Operations operations;
 
     public Situation(){
@@ -22,6 +22,20 @@ public class Situation {
             }
         }
         return null;
+    }
+
+    public void add(InstanceState object){
+        objects.add(object);
+        for(InstanceState field : object.fields){
+            add(object);
+        }
+    }
+
+    public void remove(InstanceState object){
+        objects.remove(object);
+        for(InstanceState field : object.fields){
+            remove(object);
+        }
     }
 
     public boolean equals(Situation situation){

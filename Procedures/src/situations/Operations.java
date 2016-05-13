@@ -13,15 +13,15 @@ class Operations{
     public Situation subSituation(String... names){
         Situation result = new Situation();
         for(String name : names){
-            result.objects.add(situation.get(name));
+            result.add(situation.get(name));
         }
         return result;
     }
 
     public void join(Situation situation) {
         for(InstanceState object : situation.objects){
-            situation.objects.remove(situation.get(object.instance.name));
-            situation.objects.add(object);
+            situation.remove(situation.get(object.instance.name));
+            situation.add(object);
         }
     }
 

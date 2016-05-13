@@ -10,11 +10,12 @@ import java.util.Iterator;
 public class InstanceState {
 
     public final Instance instance;
-
     public ArrayList<String> state;
+    public ArrayList<InstanceState> fields;
 
     public InstanceState(Instance instance){
         this.instance = instance;
+        this.fields = new ArrayList<InstanceState>();
         this.state = new ArrayList<String>();
     }
 
