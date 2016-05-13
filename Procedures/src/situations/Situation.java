@@ -1,7 +1,5 @@
 package situations;
 
-import exceptions.ObjectNotFoundException;
-
 import java.util.ArrayList;
 
 /**
@@ -10,32 +8,29 @@ import java.util.ArrayList;
 public class Situation {
 
     public ArrayList<InstanceState> objects;
+    public Operations operations;
 
-    public Situation subSituation(String... names){
-        Situation result = new Situation();
-        for(String name : names){
-            result.objects.add(getObject(name));
-        }
-        return result;
+    public Situation(){
+        objects = new ArrayList<InstanceState>();
+        operations = new Operations(this);
     }
 
-    public InstanceState getObject(String name){
+    public InstanceState get(String name){
         for(InstanceState object : objects){
             if(object.instance.name.equals((name))){
                 return object;
             }
         }
-        throw new ObjectNotFoundException();
+        return null;
     }
 
-    public void join(Situation situation) {
-        for(InstanceState object : situation.objects){
-            try {
-                objects.remove(getObject(object.instance.name));
-            }catch(ObjectNotFoundException e){
-
+    public boolean equals(Situation situation){
+        for(InstanceState object : objects){
+            InstanceState otherObject = situation.get(object.instance.name);
+            if(!object.equals(otherObject)){
+                return false;
             }
-            objects.add(object);
         }
+        return true;
     }
 }
