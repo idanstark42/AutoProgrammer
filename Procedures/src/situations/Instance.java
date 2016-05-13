@@ -10,15 +10,10 @@ import java.util.List;
  */
 public class Instance {
 
-    public Type type;
-    public String name;
-
-    public Instance(){
-
-    }
+    public final Type type;
+    public final String name;
 
     public Instance(Type type, String name){
-        this();
         this.type = type;
         this.name = name;
     }
