@@ -13,6 +13,10 @@ public class Create extends Procedure{
 
     private Instance object;
 
+    public Create(Instance object){
+        this.object = object;
+    }
+
     @Override
     public Situation act(Situation initialSituation) {
         initialSituation.add(ObjectFactory.createObject(object));
