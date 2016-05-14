@@ -24,6 +24,7 @@ public class ClassicChoosingAlgorithm implements ChoosingAlgorithm{
             currentSituation = creation.act(currentSituation);
             result.procedures.add(creation);
         }
+        //TODO build updating algorithm.
 
         return result;
     }

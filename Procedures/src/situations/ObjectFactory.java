@@ -31,13 +31,37 @@ public class ObjectFactory {
             }
         };
         InstanceState result = new InstanceState(type, instance.name);
+
         for(int i = 0; i < length; i++){
             result.fields.add(result);
         }
+
+        InstanceState lengthInstance = new InstanceState(new Instance(Integer.TYPE,"length"));
+        lengthInstance.state.add("" + length);
+        result.fields.add(lengthInstance);
+
         return result;
     }
     public static InstanceState createArray(Type type, String name, int length){
         return createArray(new Instance(type,name), length);
+    }
+
+    public static InstanceState createEmptyCopy(InstanceState object){
+        if(object.instance.type instanceof GenericArrayType){
+            Type type = ((GenericArrayType)object.instance.type).getGenericComponentType();
+            InstanceState lengthInstance = null;
+            for(InstanceState field : object.fields){
+                if(field.instance.name.equals("length")){
+                    lengthInstance = field;
+                    break;
+                }
+            }
+            if(lengthInstance == null) return null;//throw exception
+            int length = Integer.parseInt(lengthInstance.state.get(0));
+            return createArray(type, object.instance.name, length);
+        }else{
+            return createObject(new Instance(object.instance));
+        }
     }
 
     private static Field[] getFields(Type type){
