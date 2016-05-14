@@ -3,7 +3,7 @@ package situations;
 /**
  * Created by Idan Stark on 13/05/16.
  */
-class Operations{
+public class Operations{
 
     private Situation situation;
     public Operations(Situation situation){

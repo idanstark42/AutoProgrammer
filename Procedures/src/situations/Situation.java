@@ -38,6 +38,10 @@ public class Situation {
         }
     }
 
+    public void remove(String name){
+        remove(get(name));
+    }
+
     public boolean equals(Situation situation){
         for(InstanceState object : objects){
             InstanceState otherObject = situation.get(object.instance.name);

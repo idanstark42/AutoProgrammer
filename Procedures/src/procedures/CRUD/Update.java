@@ -1,7 +1,31 @@
 package procedures.CRUD;
 
+import procedures.Procedure;
+import situations.InstanceState;
+import situations.Situation;
+
 /**
  * Created by Idan Stark on 13/05/16.
  */
-public class Update {
+public class Update extends Procedure{
+
+    public enum Action{Delete, Add}
+
+    public String objectName;
+    public Action action;
+
+    public String mark;
+
+    @Override
+    public Situation act(Situation initialSituation) {
+        InstanceState object = initialSituation.get(objectName);
+        if(object == null) return initialSituation;
+        if(action == Action.Delete){
+            object.state.remove(mark);
+        }else{
+            object.state.add(mark);
+        }
+        return initialSituation;
+    }
+
 }
