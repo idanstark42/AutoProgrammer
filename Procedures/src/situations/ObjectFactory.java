@@ -50,6 +50,7 @@ public class ObjectFactory {
         if(type instanceof TypeVariable || type instanceof WildcardType){
             return new Field[0];
         }
+        return null;
     }
 
 }
