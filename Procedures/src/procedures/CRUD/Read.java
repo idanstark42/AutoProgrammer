@@ -21,9 +21,7 @@ public class Read extends Procedure{
 
     private String[] names(Situation situation){
         ArrayList<String> names = new ArrayList<String>();
-        for(InstanceState field : situation.get(objectName).fields){
-            names.add(field.instance.name);
-        }
+        situation.get(objectName).fields.forEach(f -> names.add(f.instance.name));
         return names.toArray(new String[names.size()]);
     }
 

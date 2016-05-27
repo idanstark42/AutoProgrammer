@@ -8,8 +8,16 @@ import situations.Situation;
  */
 public class While extends Procedure{
 
+    private Procedure procedure;
+
+    private String conditionObjectName;
+
     @Override
     public Situation act(Situation initialSituation) {
-        return null;
+        Situation currentSituation = initialSituation;
+        while(initialSituation.get(conditionObjectName).isMarkedAs("true")){
+            currentSituation = procedure.act(currentSituation);
+        }
+        return currentSituation;
     }
 }
