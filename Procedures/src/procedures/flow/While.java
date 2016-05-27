@@ -8,9 +8,9 @@ import situations.Situation;
  */
 public class While extends Procedure{
 
-    private Procedure procedure;
+    public Procedure procedure;
 
-    private String conditionObjectName;
+    public String conditionObjectName;
 
     @Override
     public Situation act(Situation initialSituation) {

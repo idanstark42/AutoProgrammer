@@ -13,7 +13,7 @@ import java.util.StringJoiner;
  */
 public class Read extends Procedure{
 
-    private String objectName;
+    public String objectName;
 
     public Situation act(Situation initialSituation){
         return initialSituation.operations.subSituation(names(initialSituation));

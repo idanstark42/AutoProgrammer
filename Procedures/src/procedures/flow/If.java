@@ -8,10 +8,10 @@ import situations.Situation;
  */
 public class If extends Procedure{
 
-    private Procedure onTruth;
-    private Procedure onFalse;
+    public Procedure onTruth;
+    public Procedure onFalse;
 
-    private String conditionObjectName;
+    public String conditionObjectName;
 
     @Override
     public Situation act(Situation initialSituation) {

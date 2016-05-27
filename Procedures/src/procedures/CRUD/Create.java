@@ -11,7 +11,7 @@ import situations.Situation;
  */
 public class Create extends Procedure{
 
-    private Instance object;
+    public Instance object;
 
     public Create(Instance object){
         this.object = object;
