@@ -10,7 +10,11 @@ import situations.Situation;
  */
 public class Delete extends Procedure{
 
-    private String objectName;
+    public String objectName;
+
+    public Delete(String objectName){
+        this.objectName = objectName;
+    }
 
     @Override
     public Situation act(Situation initialSituation) {

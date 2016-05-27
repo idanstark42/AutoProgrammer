@@ -1,5 +1,8 @@
 package situations;
 
+import procedures.CRUD.Update;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -35,6 +38,25 @@ public class Operations{
             }
         }
         return result;
+    }
+
+    public Update[] necessaryUpdates(Situation goal){
+        ArrayList<Update> updates = new ArrayList<>();
+        for(InstanceState object : this.situation.objects){
+            InstanceState goalObject = goal.get(object.instance.name);
+            if(goalObject != null){
+                for(String existingMark : object.state){
+                    if(!goalObject.isMarkedAs(existingMark)){
+                        updates.add(new Update(object.instance.name, existingMark, Update.Action.Delete));
+                    }
+                }
+                for(String missingMark : goalObject.state){
+                    if(!object.isMarkedAs(missingMark)){
+                        updates.add(new Update(object.instance.name, missingMark, Update.Action.Add));
+                    }
+                }
+            }
+        }
     }
 
 }

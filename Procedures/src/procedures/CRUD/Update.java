@@ -16,6 +16,12 @@ public class Update extends Procedure{
 
     public String mark;
 
+    public Update(String objectName, String mark, Update.Action action){
+        this.objectName = objectName;
+        this.mark = mark;
+        this.action = action;
+    }
+
     @Override
     public Situation act(Situation initialSituation) {
         InstanceState object = initialSituation.get(objectName);
