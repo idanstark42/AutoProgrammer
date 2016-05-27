@@ -57,6 +57,7 @@ public class Operations{
                 }
             }
         }
+        return updates.toArray(new Update[updates.size()]);
     }
 
 }

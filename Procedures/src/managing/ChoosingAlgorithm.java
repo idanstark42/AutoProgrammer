@@ -8,7 +8,6 @@ import situations.Situation;
  */
 public interface ChoosingAlgorithm{
 
-
-
+    Procedure choose(Situation begining, Situation ending);
 
 }
